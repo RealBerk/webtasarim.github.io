@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="aqua">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wellness Sağlık | Çok Dilli + Tema</title>
+  <meta name="description" content="Wellness Sağlık: Sağlık turizmi, evde bakım ve ambulans hizmetlerinde mobil uyumlu, hasta-dostu deneyim.">
+  
+  <link rel="stylesheet" href="./css/app.css">
+
+
+
+
+</head>
+<body data-lang="tr" id="body">
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Wellness Sağlık Ana sayfa">
+        <span class="brand-logo">W</span>
+        <span class="brand-name">Wellness Sağlık</span>
+      </a>
+      
+
+      <div class="nav-actions">
+        <!-- <button class="sheet-toggle" id="sheetToggle" aria-label="Dil & Tema">🌐 <span data-i18n="ui.lang_theme">Dil & Tema</span></button> -->
+        <!-- <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">🎨 Tema</button> -->
+        <button class="menu-toggle" aria-label="Menüyü aç/kapat">Menü</button>
+      </div>
+
+      <ul class="menu" aria-label="Ana menü">
+        <li class="has-dropdown">
+          <button onclick="menuClickOpen(this)" id="hizmetlerBtn" aria-expanded="false" aria-controls="hizmetlerDropdown" data-i18n="nav.services">Hizmetler</button>
+          <div class="dropdown" id="hizmetlerDropdown" role="menu">
+            <a href="#evde-bakim">🏥 <span data-i18n="nav.homecare">Evde Bakım</span></a>
+            <a href="#ambulans">🚑 <span data-i18n="nav.ambulance">Ambulans</span></a>
+            <!-- <a href="#saglik-turizmi">✈️ <span data-i18n="nav.medicaltourism">Sağlık Turizmi & Konaklama</span></a> -->
+          </div>
+        </li>
+        <li><a href="#neden-biz" data-i18n="nav.whyus">Neden Biz?</a></li>
+        <li><a href="#hakkimizda" data-i18n="nav.about">Hakkımızda</a></li>
+        <li><a href="#sss" data-i18n="nav.faq">SSS</a></li>
+        <li><a href="#yorumlar" data-i18n="nav.reviews">Yorumlar</a></li>
+        <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+        <li><a href="admin.php">Admin Panel</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a href="#evde-bakim">🏥 <span data-i18n="nav.homecare">Evde Bakım</span></a>
+        <a href="#ambulans">🚑 <span data-i18n="nav.ambulance">Ambulans</span></a>
+        <!-- <a href="#saglik-turizmi">✈️ <span data-i18n="nav.medicaltourism">Sağlık Turizmi & Konaklama</span></a> -->
+        <a href="#neden-biz" data-i18n="nav.whyus">Neden Biz?</a>
+        <a href="#hakkimizda" data-i18n="nav.about">Hakkımızda</a>
+        <a href="#sss" data-i18n="nav.faq">SSS</a>
+        <a href="#yorumlar" data-i18n="nav.reviews">Yorumlar</a>
+        <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
+        <div style="display:flex; gap:8px; margin-top:6px">
+          <button class="btn" id="openSheetMobile" style="flex:1; justify-content:center">🌐 <span data-i18n="ui.lang_theme">Dil & Tema</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-in">
+        <h1 style="width: 700px !important;" data-i18n="hero.title">Wellness: Ailenizin Yanında, Sağlığınızın Güvencesi</h1>
+        <p data-i18n="hero.desc">Evde bakım ve özel sağlık hizmetlerinde, profesyonel çözümleri ayrıcalıklı bir deneyimle buluşturuyoruz.
+Sizin ve sevdiklerinizin yanında, her adımda kurumsal kalite ve VIP ayrıcalık sunuyoruz.</p>
+        <span class="badge" data-i18n="hero.badge_support">7/24 Destek</span>
+        <span class="badge" data-i18n="hero.badge_international">Profesyonel Ekip</span>
+        <span class="badge" data-i18n="hero.badge_transfer">Güvenli Transfer</span>
+        <div style="margin-top:40px;">
+          <a class="btn" href="#iletisim" data-i18n="hero.cta">Hemen Bilgi Al</a>
+        </div>
+      </div>
+      <div style="width: 30rem;" class="hero-card" aria-label="Hızlı iletişim formu">
+        <h3 style="color:var(--koyu-mavi);margin:0" data-i18n="form.quick_contact">Hızlı İletişim</h3>
+        <form onsubmit="event.preventDefault(); alert( t('form.received') );" style="display:grid; gap:8px">
+          <input type="text" name="ad" data-i18n-placeholder="form.name" placeholder="Ad Soyad" required>
+          <input type="tel" name="tel" data-i18n-placeholder="form.phone" placeholder="Telefon" required>
+          <textarea name="mesaj" rows="3" data-i18n-placeholder="form.need" placeholder="Kısaca ihtiyacınızı yazın"></textarea>
+          <button class="btn" type="submit" style="justify-content:center" data-i18n="form.send">Gönder</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="hizmetler">
+    <h2 data-i18n="services.title">Hizmetlerimiz</h2>
+    <p class="lede" data-i18n="services.lede">İki temel hizmetimiz: <strong>Evde Bakım</strong> ve <strong>Ambulans</strong>. Dokunun, detayı açın.</p>
+    <div class="services-grid">
+
+      <article class="card" id="evde-bakim">
+        <div class="card-icon">🏥</div>
+        <h3 data-i18n="svc.homecare.title">Evde Bakım</h3>
+        <p data-i18n="svc.homecare.desc">Kişiye özel bakım planı, ilaç takibi, hijyen ve hareket desteği.</p>
+        <details>
+          <summary data-toggle-label="Detayları Gör" data-i18n="ui.see_details">Detayları Gör</summary>
+          <div class="detail-body">
+            <ul>
+              <li data-i18n="svc.homecare.li1">Bakıcı Hizmetleri</li>
+              <li data-i18n="svc.homecare.li2">Refakatçi hizmetleri</li>
+              <li data-i18n="svc.homecare.li3">Hemşirelik hizmetleri</li>
+            </ul>
+            <a class="btn" href="#iletisim" data-i18n="ui.book">Randevu Al</a>
+          </div>
+        </details>
+      </article>
+
+      <article class="card" id="ambulans">
+        <div class="card-icon">🚑</div>
+        <h3 data-i18n="svc.ambulance.title">Ambulans Hizmeti</h3>
+        <p data-i18n="svc.ambulance.desc">7/24 hızlı ve güvenli nakil. Modern ekipman ve deneyimli ekip.</p>
+        <details>
+          <summary data-toggle-label="Detayları Gör" data-i18n="ui.see_details">Detayları Gör</summary>
+          <div class="detail-body">
+            <ul>
+              <li data-i18n="svc.ambulance.li1">Planlı şehir içi ve şehirlerarası nakil</li>
+              <li data-i18n="svc.ambulance.li2">Eşlik eden sağlık personeli ile güvenli transfer</li>
+              <li data-i18n="svc.ambulance.li3">Temel yaşam desteği ekipmanları</li>
+              <li data-i18n="svc.ambulance.li4">Rotaya göre güvenli planlama</li>
+            </ul>
+            <a class="btn" href="tel:+905555555555" data-i18n="ui.call_now">Şimdi Ara</a>
+          </div>
+        </details>
+      </article>
+
+     <!-- 
+     
+       <article class="card" id="saglik-turizmi">
+        <div class="card-icon">✈️</div>
+        <h3 data-i18n="svc.tourism.title">Sağlık Turizmi & Konaklama</h3>
+        <p data-i18n="svc.tourism.desc">Tedavi, konaklama ve VIP transfer tek pakette.</p>
+        <details>
+          <summary data-toggle-label="Detayları Gör" data-i18n="ui.see_details">Detayları Gör</summary>
+          <div class="detail-body">
+            <ul>
+              <li data-i18n="svc.tourism.li1">Hastane/klinik danışmanlığı</li>
+              <li data-i18n="svc.tourism.li2">Otel & refakatçi konaklama</li>
+              <li data-i18n="svc.tourism.li3">Çok dilli tercüman ve 7/24 koordinasyon</li>
+              <li data-i18n="svc.tourism.li4">Turistik öneriler: İstanbul & Kapadokya</li>
+            </ul>
+            <a class="btn" href="#iletisim" data-i18n="ui.start_plan">Planlama Başlat</a>
+          </div>
+        </details>
+      </article>
+     
+     -->
+
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section" id="neden-biz">
+    <h2 data-i18n="why.title">Neden Bizi Seçmelisiniz?</h2>
+    <p class="lede" data-i18n="why.lede">Söz değil kanıt. Tecrübe, hız, memnuniyet ve veri güvenliği.</p>
+    <div class="kpis">
+      <!-- <div class="kpi"><div class="kpi-number counter" data-count="12">0</div><small data-i18n="why.kpi1">Yıllık Tecrübe</small></div>
+      <div class="kpi"><div class="kpi-number counter" data-count="1500">0</div><small data-i18n="why.kpi2">+ Nakil / Yıl</small></div> -->
+      <div class="kpi"><div class="kpi-number counter" data-count="15">0</div><small data-i18n="why.kpi3">dk Yanıt Süresi</small></div>
+      <div class="kpi"><div class="kpi-number counter" data-count="97">0</div><small data-i18n="why.kpi4">% Memnuniyet</small></div>
+    </div>
+    <div class="assures-grid">
+      <div class="assure"><div class="icon">🩺</div><div><h4 data-i18n="why.a1h">Evde Doktor</h4><p data-i18n="why.a1p">Uzman hekim ziyareti, reçete ve gerekli tetkik planlaması.</p></div></div>
+      <div class="assure"><div class="icon">🚑</div><div><h4 data-i18n="why.a2h">Özel Ambulans</h4><p data-i18n="why.a2p">Randevulu ve güvenli şehir içi/şehir dışı nakil.</p></div></div>
+      <div class="assure"><div class="icon">🦶</div><div><h4 data-i18n="why.a3h">Evde Fizyoterapi</h4><p data-i18n="why.a3p">Kişiye özel egzersiz planı, rehabilitasyon ve ağrı yönetimi.</p></div></div>
+      <div class="assure"><div class="icon">💉</div><div><h4 data-i18n="why.a4h">Evde Hemşire</h4><p data-i18n="why.a4p">Enjeksiyon, serum, pansuman, kan alma  ve takip.</p></div></div>
+      <div class="assure"><div class="icon">🧪</div><div><h4 data-i18n="why.a5h">Serum & Tahlil</h4><p data-i18n="why.a5p">Evde kan alımı, laboratuvar süreç takibi ve sonuç bildirimi.</p></div></div>
+      <div class="assure"><div class="icon">🛡️</div><div><h4 data-i18n="why.a6h">Refakat & Danışmanlık</h4><p data-i18n="why.a6p">Hastane süreç yönetimi, medikal danışmanlık ve VIP refakat.</p></div></div></div>
+    <div class="timeline" aria-label="Süreç Güvencesi">
+      <h3 style="margin:0 0 8px;color:var(--koyu-mavi)" data-i18n="why.process">Süreç Güvencesi</h3>
+      <div class="steps">
+        <div class="step active"><div class="dot"></div><span data-i18n="why.s1">1. Ön Görüşme</span><small data-i18n="why.s1d">İhtiyaç analizi</small></div>
+        <div class="step"><div class="dot"></div><span data-i18n="why.s2">2. Planlama</span><small data-i18n="why.s2d">Rota & ekip</small></div>
+        <div class="step"><div class="dot"></div><span data-i18n="why.s3">3. Uygulama</span><small data-i18n="why.s3d">Nakil / tedavi</small></div>
+        <div class="step"><div class="dot"></div><span data-i18n="why.s4">4. Takip</span><small data-i18n="why.s4d">Raporlama</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="hakkimizda">
+    <div>
+      <h2 data-i18n="about.title">Hakkımızda</h2>
+      <p data-i18n="about.p1"><strong>Wellness</strong>, evde sağlık ve özel bakım hizmetlerinde güveni, konforu ve kurumsal kaliteyi bir araya getirmek için kuruldu.</p>
+      <p data-i18n="about.p2"><strong>Amacımız</strong>; sevdiklerinize kendi evlerinin huzurunda, en yüksek standartlarda sağlık hizmeti sunmak.
+Türkiye’nin her noktasında 7/24 hizmet veren profesyonel ekibimiz, sadece medikal destek değil, aynı zamanda güvenli transferden kişiye özel bakım çözümlerine kadar geniş bir yelpazede yanınızdadır.
+Bizim için sağlık sadece bir hizmet değil, aynı zamanda bir sorumluluktur. </p>
+      <p data-i18n="about.p3"><strong>Wellness</strong> ile;
+Güvenli ve hızlı müdahale,
+VIP standartlarda özel çözümler,
+Aileniz için daima ulaşılabilir destek
+her zaman elinizin altında.
+Wellness: Sağlığınız için güven, aileniz için konfor.</p>
+      <p data-i18n="about.p4"><em>Gizlilik ve saygı</em> çizgimizdir. Verileriniz KVKK’ya uygun korunur.</p>
+      <div>
+        <span class="pill" data-i18n="about.tag1">Uzman Ekip</span>
+        <span class="pill" data-i18n="about.tag2">7/24 Destek</span>
+        <span class="pill" data-i18n="about.tag3">Türkiye Geneli</span>
+      </div>
+
+      <div class="about-accordion">
+        <details class="about-acc"><summary data-i18n="about.viz">Vizyonumuz</summary><div class="acc-body" data-i18n="about.vizp">Türkiye’yi sağlıkta güven ve konforla anılan bir merkez yapmak.</div></details>
+        <details class="about-acc"><summary data-i18n="about.ilk">İlkelerimiz</summary><div class="acc-body" data-i18n="about.ilkp">Etik, şeffaf, saygılı ve güvenli hizmet standartları.</div></details>
+        <details class="about-acc"><summary data-i18n="about.kal">Kalite & Güvenlik</summary><div class="acc-body" data-i18n="about.kalp">Sürekli iyileştirme, akreditasyon uyumu ve denetimler.</div></details>
+      </div>
+    </div>
+    <!--<img class="image" src="./img/image_.png" alt="Modern sağlık ortamı">-->
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="sss">
+    <h2 data-i18n="faq.title">SSS – Sıkça Sorulan Sorular</h2>
+    <div class="faq-grid">
+      <details class="faq-acc"><summary data-i18n="faq.q1">Acil bir durumdayım; sizi arayabilir miyim?</summary><div class="faq-body" data-i18n="faq.a1">Acil durumlarda 112’yi arayın. Biz randevulu evde sağlık ve planlı nakil hizmeti veriyoruz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q2">En hızlı nasıl randevu alırım?</summary><div class="faq-body" data-i18n="faq.a2">WhatsApp’tan yazın; ad-soyad, konum (ilçe/şehir), istediğiniz hizmet ve uygun saat bilgisi yeterli.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Bugün gelebilir misiniz?</summary><div class="faq-body" data-i18n="faq.a4">Müsaitliğe göre aynı gün planlıyoruz. Konum ve hizmeti net yazmanız yeterli.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Hangi bölgelerde çalışıyorsunuz?</summary><div class="faq-body" data-i18n="faq.a4">İstanbul genelinde evde sağlık. Planlı nakil ve refakat Türkiye geneli.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Ücretler nasıl belirleniyor?</summary><div class="faq-body" data-i18n="faq.a4">Hizmete, mesafeye, süreye ve ekip ihtiyacına göre. Önceden net fiyat paylaşıyoruz; gizli kalem yok.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Ödeme nasıl yapılıyor?</summary><div class="faq-body" data-i18n="faq.a4">Nakit, kart veya EFT/FAST ile. E-fatura kesiyoruz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Malzemeleriniz güvenli mi?</summary><div class="faq-body" data-i18n="faq.a4">Steril ve tek kullanımlık sarf kullanıyoruz; cihazlar düzenli dezenfekte edilir.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Gizliliğim nasıl korunuyor (KVKK)?</summary><div class="faq-body" data-i18n="faq.a4">Verileriniz sadece randevu ve hizmet planlaması için, KVKK’ya uygun şekilde işlenir.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Evde kan alımı yapıyor musunuz? Sonuçlar ne zaman çıkar?</summary><div class="faq-body" data-i18n="faq.a4">Evet. Teste göre aynı gün veya ertesi gün sonuçları WhatsApp veya e-posta ile iletiyoruz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Evde serum takılıyor mu?</summary><div class="faq-body" data-i18n="faq.a4">Hekim değerlendirmesi ve uygun endikasyon varsa, bilgilendirilmiş onam sonrası uygulanır.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Randevuyu iptal/erteleme mümkün mü?</summary><div class="faq-body" data-i18n="faq.a4">Evet. Planlamayı aksatmamak için mümkünse en az 2 saat önce haber verin.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Özel ambulans/planlı nakil nasıl işliyor?</summary><div class="faq-body" data-i18n="faq.a4">Durumu kısaca anlatın; gerekli ekipman/personel ve güzergâh planlanır. Net fiyat ve tahmini süre paylaşılır.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Binada asansör yok; taşıma nasıl olacak?</summary><div class="faq-body" data-i18n="faq.a4">Gerektiğinde ilave personel ve/veya ekipman planlarız. Bu durum fiyata yansıyabilir; önceden bilgilendiririz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Şehirler arası transfer yapıyor musunuz?</summary><div class="faq-body" data-i18n="faq.a4">Evet, planlı şehirler arası nakil yapıyoruz. Güzergâha göre net fiyat ve tahmini süre verilir.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Gece saatlerinde hizmet var mı?</summary><div class="faq-body" data-i18n="faq.a4">WhatsApp hattımız 7/24 yanıt verir. Ziyaret ve nakiller müsaitliğe göre her saatte planlanabilir.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Fatura veriyor musunuz?</summary><div class="faq-body" data-i18n="faq.a4">Evet, e-fatura düzenliyoruz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Refakat/hastane süreç yönetimi sunuyor musunuz?</summary><div class="faq-body" data-i18n="faq.a4">Evet. Kayıt işlemleri, poliklinik yönlendirme ve VIP refakat planlanır.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Ziyaret sonrası rapor/özet alabilir miyim?</summary><div class="faq-body" data-i18n="faq.a4">Ziyaret sonrası yazılı özet paylaşılır; gerekli resmi rapor süreçlerinde bilgilendiririz.</div></details>
+      <details class="faq-acc"><summary data-i18n="faq.q4">Evde izolasyon/temas kurallarınız neler?</summary><div class="faq-body" data-i18n="faq.a4">Maske-eldiven, hijyen ve mesafe kurallarına uyarız; ev halkını kısaca bilgilendiririz.</div></details>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section reviews" id="yorumlar">
+    <h2 data-i18n="reviews.title">Müşteri Yorumları</h2>
+    <div class="stats"><div class="stars" id="avgStars">★★★★★</div><div><strong id="avgScore">5.0</strong> / 5 • <span id="revCount">0</span> <span data-i18n="reviews.count">yorum</span></div></div>
+    <div class="review-list" id="reviewList"></div>
+    <form class="review-form" id="reviewForm">
+      <h3 style="margin:0 0 6px;color:var(--koyu-mavi)" data-i18n="reviews.leave">Yorum Bırakın</h3>
+      <div class="rating" role="radiogroup">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+      </div>
+      <div style="display:grid; gap:6px; margin-top:6px">
+        <input type="text" id="revName" data-i18n-placeholder="form.name" placeholder="Adınız" required>
+        <input type="text" id="revCountry" data-i18n-placeholder="reviews.country" placeholder="Ülke (opsiyonel)">
+        <textarea id="revMsg" rows="4" data-i18n-placeholder="reviews.message" placeholder="Deneyiminiz" required></textarea>
+      </div>
+      <button class="btn" type="submit" style="margin-top:8px; justify-content:center" data-i18n="form.send">Gönder</button>
+    </form>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="iletisim">
+    <h2 data-i18n="contact.title">İletişim</h2>
+    <div class="contact-grid">
+      <form class="form" onsubmit="event.preventDefault(); alert( t('form.received') );">
+        <input type="text" name="ad" data-i18n-placeholder="form.name" placeholder="Ad Soyad" required>
+        <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="E-posta" required>
+        <input type="tel" name="tel" data-i18n-placeholder="form.phone" placeholder="Telefon" required>
+        <textarea name="mesaj" rows="5" data-i18n-placeholder="form.need_long" placeholder="İhtiyacınızı kısaca anlatın"></textarea>
+        <button class="btn" type="submit" style="justify-content:center" data-i18n="form.send">Gönder</button>
+      </form>
+      <div>
+        <iframe class="map" src="https://www.google.com/maps?q=Kad%C4%B1k%C3%B6y%2C%20%C4%B0stanbul&output=embed" loading="lazy" title="Kadıköy, İstanbul Harita"></iframe>
+        <div class="info-cards">
+          <div class="info-card"><div class="info-icn">📞</div><div><h4 data-i18n="contact.phone">Telefon</h4><a href="tel:+905555555555">+90 555 555 55 55</a></div></div>
+          <div class="info-card"><div class="info-icn">✉️</div><div><h4 data-i18n="contact.email">E‑posta</h4><a href="mailto:info@wellness-saglik.com">info@wellness-saglik.com</a></div></div>
+          <div class="info-card"><div class="info-icn">📍</div><div><h4 data-i18n="contact.address">Adres</h4><p>Kadıköy / İstanbul</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="copy">© 2025 Wellness Sağlık. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></div>
+      <div style="text-align:right">
+        <a class="btn btn-outline" href="#top"><span style="font-weight:800" data-i18n="ui.up">Yukarı</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-whatsapp" href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+
+  <!-- Bottom Sheet -->
+  <div class="sheet-overlay" id="sheetOverlay" aria-hidden="true"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-header">
+      <strong id="sheetTitle" data-i18n="ui.lang_theme">Dil & Tema</strong>
+      <button class="theme-toggle" id="closeSheet" aria-label="Kapat">✕</button>
+    </div>
+    <div class="sheet-tabs">
+      <button class="tab-btn" id="tabLang" aria-selected="true" data-i18n="ui.languages">Diller</button>
+      <button class="tab-btn" id="tabTheme" aria-selected="false" data-i18n="ui.themes">Temalar</button>
+    </div>
+    <div class="sheet-content" id="langPanel">
+      <div class="lang-grid">
+        <div class="lang-item" data-lang="tr"><span class="flag">🇹🇷</span><strong>TR</strong><span>Türkçe</span></div>
+        <div class="lang-item" data-lang="en"><span class="flag">🇬🇧</span><strong>EN</strong><span>English</span></div>
+        <div class="lang-item" data-lang="ar"><span class="flag">🇸🇦</span><strong>AR</strong><span>العربية</span></div>
+        <div class="lang-item" data-lang="ru"><span class="flag">🇷🇺</span><strong>RU</strong><span>Русский</span></div>
+        <div class="lang-item" data-lang="de"><span class="flag">🇩🇪</span><strong>DE</strong><span>Deutsch</span></div>
+        <div class="lang-item" data-lang="fr"><span class="flag">🇫🇷</span><strong>FR</strong><span>Français</span></div>
+        <div class="lang-item" data-lang="it"><span class="flag">🇮🇹</span><strong>IT</strong><span>Italiano</span></div>
+        <!--KÜRTÇE  <div class="lang-item" data-lang="krt"><span class="flag"></span><strong>KRT</strong><span>Kurdish</span></div> -->
+      </div>
+    </div>
+    <div class="sheet-content" id="themePanel" style="display:none">
+      <div class="theme-grid">
+        <div class="theme-swatch" data-theme="aqua"><div class="swatch" style="background:linear-gradient(135deg,#00B4D8,#2EC4B6)"></div><strong>Aqua</strong><small>Canlı & ferah</small></div>
+        <div class="theme-swatch" data-theme="lavender"><div class="swatch" style="background:linear-gradient(135deg,#7F9CF5,#68C5B3)"></div><strong>Lavender</strong><small>Sakin & premium</small></div>
+        <div class="theme-swatch" data-theme="ocean"><div class="swatch" style="background:linear-gradient(135deg,#3A86FF,#00C2A8)"></div><strong>Ocean</strong><small>Net & enerjik</small></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./js/app.js"></script>
+
+</body>
+</html>

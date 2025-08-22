@@ -1,0 +1,7 @@
+  @media (min-width: 320px) and (max-width: 374px){
+      .header {width: 455px;}
+      .hero {width: 142%;}
+      .hero-inner {margin-left: -1rem;}
+      .hero-card {margin-left: -5px;}
+      .hero.desc {width: 400px;}
+    }

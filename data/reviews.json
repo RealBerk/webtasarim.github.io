@@ -1,0 +1,13 @@
+{
+    "reviews": [
+        {
+            "id": "r_68a7a9bb9348b0.71722333",
+            "name": "emir",
+            "country": "African",
+            "message": "Very Good",
+            "rating": 5,
+            "approved": false,
+            "created": "2025-08-22T01:20:27+02:00"
+        }
+    ]
+}
