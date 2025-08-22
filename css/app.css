@@ -167,9 +167,10 @@
 
     .hero-card{
       margin-left: -45px;
-      scale: 0.9;
-      background:#ffffff; color:var(--metin); padding:12px; border-radius:16px; box-shadow:var(--shadow-m);
+      scale: 0.8;
+      background:#ffffff; color:var(--metin); padding:38px; border-radius:16px; box-shadow:var(--shadow-m);
       display:grid; gap:8px;
+      margin-top: 20px;
     }
     .hero-card input, .hero-card textarea{
       width:100%; padding:12px 12px; border:1px solid #d8e6ee; border-radius:10px; font-size:15px; outline:none; background:#fff;
@@ -345,8 +346,7 @@
 
     .form_tag 
     {
-      padding: 0 !important;
-      margin-top: -100px !important;
+      
     }
 
     .form_tag input,
