@@ -166,6 +166,8 @@
     .btn-outline:hover{filter:brightness(0.98)}
 
     .hero-card{
+      margin-left: -45px;
+      scale: 0.9;
       background:#ffffff; color:var(--metin); padding:12px; border-radius:16px; box-shadow:var(--shadow-m);
       display:grid; gap:8px;
     }
@@ -245,10 +247,10 @@
 
     /* Contact */
     .contact-grid{display:grid; grid-template-columns:1fr; gap:14px; align-items:start}
-    form{display:grid; gap:8px}
+    form{display:grid; gap:2px}
     input, textarea{
       width: 98%;
-      padding: 8px; border:1px solid #cfe4ee; border-radius:10px; background:#fff;
+      padding: 12px; border:1px solid #cfe4ee; border-radius:10px; background:#fff;
       font-size:15px; outline:none;
     }
     input:focus, textarea:focus{border-color: var(--btn-1); box-shadow:0 0 0 4px color-mix(in srgb, var(--btn-1) 18%, transparent)}
@@ -325,3 +327,30 @@
     }
 
   
+    .w-400 
+    {
+      width: 400px !important;
+    }
+
+    .sikca_soru
+    {
+      padding: 12px;
+    }
+
+    .text-head-faq
+    {
+      display: block;
+      text-align: center;
+    }
+
+    .form_tag 
+    {
+      padding: 0 !important;
+      margin-top: -100px !important;
+    }
+
+    .form_tag input,
+    .form_tag textarea
+    {
+      font-size: 20px !important;
+    }
