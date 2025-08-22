@@ -166,7 +166,7 @@
     .btn-outline:hover{filter:brightness(0.98)}
 
     .hero-card{
-      margin-left: -45px;
+      margin-left: -55px;
       scale: 0.8;
       background:#ffffff; color:var(--metin); padding:38px; border-radius:16px; box-shadow:var(--shadow-m);
       display:grid; gap:8px;
@@ -354,3 +354,4 @@
     {
       font-size: 20px !important;
     }
+
