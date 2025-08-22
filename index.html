@@ -69,8 +69,8 @@
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-in">
-        <h1 style="width: 700px !important;" data-i18n="hero.title">Wellness: Ailenizin Yanında, Sağlığınızın Güvencesi</h1>
-        <p data-i18n="hero.desc">Evde bakım ve özel sağlık hizmetlerinde, profesyonel çözümleri ayrıcalıklı bir deneyimle buluşturuyoruz.
+        <h1 class="w-400" data-i18n="hero.title">Wellness: Ailenizin Yanında, Sağlığınızın Güvencesi</h1>
+        <p class="w-400"  data-i18n="hero.desc">Evde bakım ve özel sağlık hizmetlerinde, profesyonel çözümleri ayrıcalıklı bir deneyimle buluşturuyoruz.
 Sizin ve sevdiklerinizin yanında, her adımda kurumsal kalite ve VIP ayrıcalık sunuyoruz.</p>
         <span class="badge" data-i18n="hero.badge_support">7/24 Destek</span>
         <span class="badge" data-i18n="hero.badge_international">Profesyonel Ekip</span>
@@ -81,7 +81,7 @@ Sizin ve sevdiklerinizin yanında, her adımda kurumsal kalite ve VIP ayrıcalı
       </div>
       <div style="width: 30rem;" class="hero-card" aria-label="Hızlı iletişim formu">
         <h3 style="color:var(--koyu-mavi);margin:0" data-i18n="form.quick_contact">Hızlı İletişim</h3>
-        <form onsubmit="event.preventDefault(); alert( t('form.received') );" style="display:grid; gap:8px">
+        <form class="form_tag" onsubmit="event.preventDefault(); alert( t('form.received') );" style="display:grid; gap:8px">
           <input type="text" name="ad" data-i18n-placeholder="form.name" placeholder="Ad Soyad" required>
           <input type="tel" name="tel" data-i18n-placeholder="form.phone" placeholder="Telefon" required>
           <textarea name="mesaj" rows="3" data-i18n-placeholder="form.need" placeholder="Kısaca ihtiyacınızı yazın"></textarea>
@@ -218,7 +218,9 @@ Wellness: Sağlığınız için güven, aileniz için konfor.</p>
   <!-- FAQ -->
   <section class="section faq" id="sss">
     <h2 data-i18n="faq.title">SSS – Sıkça Sorulan Sorular</h2>
-    <div class="faq-grid">
+   <div class="sikca_sorulan">
+      <details class="faq-acc sikca_soru"><summary data-i18n="faq.q4"  class="text-head-faq">Sıkça Sorulan Sorular</summary><div>
+      <div class="faq-grid">
       <details class="faq-acc"><summary data-i18n="faq.q1">Acil bir durumdayım; sizi arayabilir miyim?</summary><div class="faq-body" data-i18n="faq.a1">Acil durumlarda 112’yi arayın. Biz randevulu evde sağlık ve planlı nakil hizmeti veriyoruz.</div></details>
       <details class="faq-acc"><summary data-i18n="faq.q2">En hızlı nasıl randevu alırım?</summary><div class="faq-body" data-i18n="faq.a2">WhatsApp’tan yazın; ad-soyad, konum (ilçe/şehir), istediğiniz hizmet ve uygun saat bilgisi yeterli.</div></details>
       <details class="faq-acc"><summary data-i18n="faq.q4">Bugün gelebilir misiniz?</summary><div class="faq-body" data-i18n="faq.a4">Müsaitliğe göre aynı gün planlıyoruz. Konum ve hizmeti net yazmanız yeterli.</div></details>
@@ -239,6 +241,8 @@ Wellness: Sağlığınız için güven, aileniz için konfor.</p>
       <details class="faq-acc"><summary data-i18n="faq.q4">Ziyaret sonrası rapor/özet alabilir miyim?</summary><div class="faq-body" data-i18n="faq.a4">Ziyaret sonrası yazılı özet paylaşılır; gerekli resmi rapor süreçlerinde bilgilendiririz.</div></details>
       <details class="faq-acc"><summary data-i18n="faq.q4">Evde izolasyon/temas kurallarınız neler?</summary><div class="faq-body" data-i18n="faq.a4">Maske-eldiven, hijyen ve mesafe kurallarına uyarız; ev halkını kısaca bilgilendiririz.</div></details>
     </div>
+      </div></details>
+   </div>
   </section>
 
   <!-- Reviews -->
@@ -276,6 +280,7 @@ Wellness: Sağlığınız için güven, aileniz için konfor.</p>
         <button class="btn" type="submit" style="justify-content:center" data-i18n="form.send">Gönder</button>
       </form>
       <div>
+        
         <div class="info-cards">
           <div class="info-card"><div class="info-icn">📞</div><div><h4 data-i18n="contact.phone">Telefon</h4><a href="tel:+905555555555">+90 555 555 55 55</a></div></div>
           <div class="info-card"><div class="info-icn">✉️</div><div><h4 data-i18n="contact.email">E‑posta</h4><a href="mailto:info@wellness-saglik.com">info@wellness-saglik.com</a></div></div>
